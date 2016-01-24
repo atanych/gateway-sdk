@@ -43,12 +43,12 @@ describe Gateway::Client do
         client = Gateway::Client.new(Gateway::Requests::SendMessageRequest.new, ACCESS_TOKEN, true)
         expect(client.url({})).to eq(config.urls.test)
       end
-      context 'when api mode is production' do
-        it 'returns production gateway url' do
-          config = JSON.parse(YAML.load_file("#{Gateway.root}/gateway/config.yml").to_json, object_class: OpenStruct)
-          client = Gateway::Client.new(Gateway::Requests::SendMessageRequest.new, ACCESS_TOKEN, false)
-          expect(client.url({})).to eq(config.urls.production)
-        end
+    end
+    context 'when api mode is production' do
+      it 'returns production gateway url' do
+        config = JSON.parse(YAML.load_file("#{Gateway.root}/gateway/config.yml").to_json, object_class: OpenStruct)
+        client = Gateway::Client.new(Gateway::Requests::SendMessageRequest.new, ACCESS_TOKEN, false)
+        expect(client.url({})).to eq(config.urls.production)
       end
     end
   end
