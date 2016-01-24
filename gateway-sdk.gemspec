@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'gateway SDK'
   spec.description   = 'SDK for interaction with gateway'
-  spec.homepage      = 'https://github.com/atanych/gateway_sdk.git'
+  spec.homepage      = 'https://github.com/atanych/gateway-sdk.git'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
