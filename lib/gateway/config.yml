@@ -1,0 +1,10 @@
+urls:
+  production: "http://gateway.sms-vote.ru"
+  test: "http://staging.gateway.sms-vote.ru"
+api_methods:
+  SendMessageRequest:
+    route: "scheduler/by-phone-and-transport"
+    http_method: "post"
+  SetProfileRequest:
+    route: "scheduler/profile"
+    http_method: "post"
