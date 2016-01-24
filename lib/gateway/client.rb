@@ -23,13 +23,15 @@ module Gateway
     # Initialize
     #
     # @param [Gateway::Requests::CommonRequest] request
+    # @param [String] token access token
     # @param [TrueClass|FalseClass] test test or production modes
     #
-    def initialize(request, test = false)
+    def initialize(request, token, test = false)
       Gateway.config = JSON.parse(YAML.load_file("#{Gateway.root}/gateway/config.yml").to_json, object_class: OpenStruct)
       @request       = request
+      @token         = token
       @test          = test
-      request_name = request.class.name.split('::').last
+      request_name   = request.class.name.split('::').last
       @config_data   = Gateway.config.api_methods[request_name]
       raise Gateway::StandardError.new("fill data in config.yml for method: #{request_name}") unless @config_data
     end
@@ -47,7 +49,7 @@ module Gateway
           query_params.merge! request.attributes
           response = RestClient.get(url(query_params))
         when METHOD_POST
-          response = RestClient.post(url(query_params), request.attributes)
+          response = RestClient.post(url(query_params), request.attributes, Authorization: @token)
         else
           raise Gateway::ArgumentError.new("http method #{config_data.http_method} is not supported")
       end
