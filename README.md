@@ -18,3 +18,6 @@ Or install it yourself as:
 
 Use for sending messages from popular transports: whatsapp, viber, telegram, sms
 Read more: http://chat2desk.com/
+
+## Documentation
+http://www.rubydoc.info/gems/gateway-sdk/1.0.0
