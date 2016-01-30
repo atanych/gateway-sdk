@@ -16,10 +16,10 @@ describe Gateway::Client do
         it 'sends request and receives response' do
           request             = Gateway::Requests::SendMessageRequest.new
           request.phone       = '375447697415'
-          request.devicePhone = '79217639603'
+          request.devicePhone = '972502619555'
           request.transport   = Gateway::Requests::SendMessageRequest::TRANSPORT_WA
           request.body        = 'something!'
-          client              = Gateway::Client.new(request, ACCESS_TOKEN, false)
+          client              = Gateway::Client.new(request, ACCESS_TOKEN, true)
           expect(client.response['status']).to eq('OK')
         end
       end
