@@ -10,6 +10,7 @@ module Gateway
       TRANSPORT_VIBER = 'viber' # transport viber
       TRANSPORT_TG    = 'telegram' # transport telegram
       TRANSPORT_SMS   = 'modem' # transport modem
+      TRANSPORT_FACEBOOK   = 'facebook' # transport facebook
 
       attr_accessor :phone, :devicePhone, :body, :image, :transport
 
@@ -17,7 +18,7 @@ module Gateway
       # Possible transports
       #
       def self.possible_transports
-        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_TG, TRANSPORT_SMS]
+        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_TG, TRANSPORT_SMS, TRANSPORT_FACEBOOK]
       end
 
       def transport=(transport)
