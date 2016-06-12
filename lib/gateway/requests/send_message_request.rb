@@ -6,13 +6,13 @@ module Gateway
     #
     class SendMessageRequest < Gateway::Requests::CommonRequest
 
-      TRANSPORT_WA    = 'whatsapp' # transport whatsapp
-      TRANSPORT_VIBER = 'viber' # transport viber
-      TRANSPORT_TG    = 'telegram' # transport telegram
-      TRANSPORT_SMS   = 'modem' # transport modem
-      TRANSPORT_FACEBOOK   = 'facebook' # transport facebook
+      TRANSPORT_WA       = 'whatsapp' # transport whatsapp
+      TRANSPORT_VIBER    = 'viber' # transport viber
+      TRANSPORT_TG       = 'telegram' # transport telegram
+      TRANSPORT_SMS      = 'modem' # transport modem
+      TRANSPORT_FACEBOOK = 'facebook' # transport facebook
 
-      attr_accessor :phone, :devicePhone, :body, :image, :transport
+      attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate
 
       #
       # Possible transports
