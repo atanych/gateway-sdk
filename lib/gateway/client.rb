@@ -49,7 +49,11 @@ module Gateway
           query_params.merge! request.attributes
           response = RestClient.get(url(query_params))
         when METHOD_POST
-          response = RestClient.post(url(query_params), request.attributes, Authorization: @token)
+          if config_data.content_type == 'json'
+            response = RestClient.post(url(query_params), request.attributes.to_json, content_type: :json, Authorization: @token)
+          else
+            response = RestClient.post(url(query_params), request.attributes, Authorization: @token)
+          end
         else
           raise Gateway::ArgumentError.new("http method #{config_data.http_method} is not supported")
       end

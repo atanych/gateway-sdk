@@ -1,3 +1,3 @@
 module Gateway
-  VERSION = '1.0.3' # gem version
+  VERSION = '1.0.4' # gem version
 end

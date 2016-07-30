@@ -5,6 +5,10 @@ api_methods:
   SendMessageRequest:
     route: "scheduler/by-phone-and-transport"
     http_method: "post"
+  InboxMessageRequest:
+    route: "external/receiver"
+    http_method: "post"
+    content_type: "json"
   SetProfileRequest:
     route: "scheduler/profile"
     http_method: "post"
