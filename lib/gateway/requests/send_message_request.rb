@@ -13,7 +13,7 @@ module Gateway
       TRANSPORT_FACEBOOK = 'facebook' # transport facebook
       TRANSPORT_EXTERNAL = 'external' # transport external
 
-      attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate
+      attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate, :messageId
 
       #
       # Possible transports
