@@ -44,6 +44,17 @@ describe Gateway::Client do
           expect(client.response['status']).to eq('ok')
         end
       end
+
+      describe 'widget_message' do
+        it 'sends request and receives response' do
+          request            = Gateway::Requests::WidgetMessageRequest.new
+          request.body       = 'rspec body'
+          request.device_key = 'live chat'
+          request.client     = Gateway::Requests::Client.new(key: 'rspec_test_client', nickname: 'nickname')
+          client             = Gateway::Client.new(request, ACCESS_TOKEN, false)
+          expect(client.response['status']).to eq('ok')
+        end
+      end
     end
   end
 

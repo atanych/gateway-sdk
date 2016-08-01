@@ -9,6 +9,10 @@ api_methods:
     route: "external/receiver"
     http_method: "post"
     content_type: "json"
+  WidgetMessageRequest:
+    route: "widget/receiver"
+    http_method: "post"
+    content_type: "json"
   SetProfileRequest:
     route: "scheduler/profile"
     http_method: "post"
