@@ -17,20 +17,20 @@ module Gateway
     METHOD_POST = 'post' # http method POST
 
     attr_accessor :request
-    attr_reader :config_data, :test
+    attr_reader :config_data, :url
 
     #
     # Initialize
     #
     # @param [Gateway::Requests::CommonRequest] request
     # @param [String] token access token
-    # @param [TrueClass|FalseClass] test test or production modes
+    # @param [String] url
     #
-    def initialize(request, token, test = false)
+    def initialize(request, token, url = Gateway.config.urls.production)
       Gateway.config = JSON.parse(YAML.load_file("#{Gateway.root}/gateway/config.yml").to_json, object_class: OpenStruct)
       @request       = request
       @token         = token
-      @test          = test
+      @url          = url
       request_name   = request.class.name.split('::').last
       @config_data   = Gateway.config.api_methods[request_name]
       raise Gateway::StandardError.new("fill data in config.yml for method: #{request_name}") unless @config_data
@@ -72,8 +72,8 @@ module Gateway
     # @return [String] url with query params
     #
     def url(query_params)
-      url = test ? Gateway.config.urls.test : Gateway.config.urls.production
-      url += '?' + URI.encode_www_form(query_params) unless query_params.empty?
+      url = @url
+      url += "?#{URI.encode_www_form(query_params)}" unless query_params.empty?
       url
     end
   end
