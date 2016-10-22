@@ -15,7 +15,7 @@ module Gateway
       TRANSPORT_EXTERNAL = 'external' # transport external
       TRANSPORT_WIDGET   = 'widget' # transport widget
 
-      attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate, :messageId
+      attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate, :messageId, :pdf
 
       #
       # Possible transports
