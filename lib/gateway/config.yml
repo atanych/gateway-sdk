@@ -1,5 +1,5 @@
 urls:
-  production: "http://gateway.sms-vote.ru"
+  production: "https://gateway.sms-vote.ru"
   test: "http://staging.gateway.sms-vote.ru"
 api_methods:
   SendMessageRequest:
