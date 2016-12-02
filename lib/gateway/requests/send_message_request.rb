@@ -6,14 +6,15 @@ module Gateway
     #
     class SendMessageRequest < Gateway::Requests::CommonRequest
 
-      TRANSPORT_WA       = 'whatsapp' # transport whatsapp
-      TRANSPORT_VIBER    = 'viber' # transport viber
-      TRANSPORT_TG       = 'telegram' # transport telegram
-      TRANSPORT_SMS      = 'modem' # transport modem
-      TRANSPORT_FACEBOOK = 'facebook' # transport facebook
-      TRANSPORT_VK = 'vk' # transport vk
-      TRANSPORT_EXTERNAL = 'external' # transport external
-      TRANSPORT_WIDGET   = 'widget' # transport widget
+      TRANSPORT_WA             = 'whatsapp' # transport whatsapp
+      TRANSPORT_VIBER          = 'viber' # transport viber
+      TRANSPORT_VIBER_BUSINESS = 'viber_business' # transport viber_business
+      TRANSPORT_TG             = 'telegram' # transport telegram
+      TRANSPORT_SMS            = 'modem' # transport modem
+      TRANSPORT_FACEBOOK       = 'facebook' # transport facebook
+      TRANSPORT_VK             = 'vk' # transport vk
+      TRANSPORT_EXTERNAL       = 'external' # transport external
+      TRANSPORT_WIDGET         = 'widget' # transport widget
 
       attr_accessor :phone, :devicePhone, :body, :image, :transport, :plannedDate, :messageId, :pdf
 
@@ -21,7 +22,7 @@ module Gateway
       # Possible transports
       #
       def self.possible_transports
-        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_TG, TRANSPORT_SMS, TRANSPORT_FACEBOOK, TRANSPORT_VK, TRANSPORT_EXTERNAL, TRANSPORT_WIDGET]
+        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_VIBER_BUSINESS, TRANSPORT_TG, TRANSPORT_SMS, TRANSPORT_FACEBOOK, TRANSPORT_VK, TRANSPORT_EXTERNAL, TRANSPORT_WIDGET]
       end
 
       def transport=(transport)
