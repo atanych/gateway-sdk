@@ -9,6 +9,7 @@ module Gateway
       TRANSPORT_WA             = 'whatsapp' # transport whatsapp
       TRANSPORT_VIBER          = 'viber' # transport viber
       TRANSPORT_VIBER_BUSINESS = 'viber_business' # transport viber_business
+      TRANSPORT_VIBER_PUBLIC   = 'viber_public' # transport viber_public
       TRANSPORT_TG             = 'telegram' # transport telegram
       TRANSPORT_SMS            = 'modem' # transport modem
       TRANSPORT_FACEBOOK       = 'facebook' # transport facebook
@@ -22,7 +23,7 @@ module Gateway
       # Possible transports
       #
       def self.possible_transports
-        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_VIBER_BUSINESS, TRANSPORT_TG, TRANSPORT_SMS, TRANSPORT_FACEBOOK, TRANSPORT_VK, TRANSPORT_EXTERNAL, TRANSPORT_WIDGET]
+        [TRANSPORT_WA, TRANSPORT_VIBER, TRANSPORT_VIBER_BUSINESS, TRANSPORT_VIBER_PUBLIC, TRANSPORT_TG, TRANSPORT_SMS, TRANSPORT_FACEBOOK, TRANSPORT_VK, TRANSPORT_EXTERNAL, TRANSPORT_WIDGET]
       end
 
       def transport=(transport)
