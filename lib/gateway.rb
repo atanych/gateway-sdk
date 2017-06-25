@@ -1,3 +1,4 @@
+require "#{File.dirname(__FILE__)}/gateway/requests/common_request"
 Dir["#{File.dirname(__FILE__)}/gateway/**/*.rb"].each {|file| require file }
 
 #
